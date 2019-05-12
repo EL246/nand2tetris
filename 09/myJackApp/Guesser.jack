@@ -1,0 +1,46 @@
+class Guesser {
+    static int number;
+    field int max;
+    field int min;
+
+    constructor Guesser new2() {
+            return this;
+    }
+
+    constructor Guesser new(int low, int high) {
+        let min = low;
+        let max = high;
+        return this;
+    }
+
+    /* initializes static fields */
+    function void init() {
+        let number = 85;
+        return;
+    }
+
+    method Boolean guessNumber(int guess) {
+        if (guess = number) {
+            return true;
+            }
+         if (guess > number) {
+            do Output.printString("Your guess is too big");
+            do Output.println();
+         }
+         else {
+            do Output.printString("Your guess is too small");
+            do Output.println();
+         }
+        return false;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    function int getNumber() {
+        return number;
+    }
+
+}

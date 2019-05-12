@@ -1,0 +1,27 @@
+// My app in the Jack language
+class Main {
+
+    function void main() {
+        var int guess;
+        var Guesser guesser;
+        var String prompt;
+        var Boolean won;
+
+        do Guesser.init();
+        let guesser = Guesser.new2();
+        //let guesser = Guesser.new(1,100);
+        let guess = Keyboard.readInt("Guess a number between 1 and 100: ");
+
+
+        while(~guesser.guessNumber(guess)) {
+            do Output.println();
+            let guess = Keyboard.readInt("Guess a number between 1 and 100: ");
+        }
+
+        do Output.printString("You Won!");
+        do Output.println();
+        do guesser.dispose();
+
+        return;
+    }
+}

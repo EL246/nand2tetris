@@ -1,0 +1,69 @@
+class Main {
+
+    function void main() {
+        var int input;
+
+        do Output.printString("Are you feeling happy? [Y/N]");
+        let input = Keyboard.readChar();
+
+        if (input = 89) {
+            do Main.drawHappy(4000);
+            return;
+        }
+
+        if (input = 78) {
+            do Main.drawSad(4000);
+            return;
+        }
+
+        do Output.println();
+        do Output.printString("Wrong input, should be Y or N");
+
+        return;
+    }
+
+    function void drawHappy(int location) {
+    	var int memAddress;
+    	let memAddress = 16384+location;
+    	do Memory.poke(memAddress+0, 0);
+    	do Memory.poke(memAddress+32, 0);
+    	do Memory.poke(memAddress+64, 0);
+    	do Memory.poke(memAddress+96, 15420);
+    	do Memory.poke(memAddress+128, 9252);
+    	do Memory.poke(memAddress+160, 9252);
+    	do Memory.poke(memAddress+192, 15420);
+    	do Memory.poke(memAddress+224, 0);
+    	do Memory.poke(memAddress+256, 0);
+    	do Memory.poke(memAddress+288, 14364);
+    	do Memory.poke(memAddress+320, 4104);
+    	do Memory.poke(memAddress+352, 2064);
+    	do Memory.poke(memAddress+384, 1056);
+    	do Memory.poke(memAddress+416, 960);
+    	do Memory.poke(memAddress+448, 0);
+    	do Memory.poke(memAddress+480, 0);
+    	return;
+    }
+
+    function void drawSad(int location) {
+        var int memAddress;
+    	let memAddress = 16384+location;
+    	do Memory.poke(memAddress+0, 0);
+    	do Memory.poke(memAddress+32, 0);
+    	do Memory.poke(memAddress+64, 0);
+    	do Memory.poke(memAddress+96, 15420);
+    	do Memory.poke(memAddress+128, 9252);
+    	do Memory.poke(memAddress+160, 9252);
+    	do Memory.poke(memAddress+192, 15420);
+    	do Memory.poke(memAddress+224, 0);
+    	do Memory.poke(memAddress+256, 0);
+    	do Memory.poke(memAddress+288, 0);
+    	do Memory.poke(memAddress+320, 960);
+    	do Memory.poke(memAddress+352, 1056);
+    	do Memory.poke(memAddress+384, 2064);
+    	do Memory.poke(memAddress+416, 4104);
+    	do Memory.poke(memAddress+448, 14364);
+    	do Memory.poke(memAddress+480, 0);
+    	return;
+    }
+
+}
